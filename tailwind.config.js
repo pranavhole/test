@@ -22,10 +22,10 @@ module.exports = {
     },
   },
   plugins: [
-    {'postcss-import': {}},
-    {'tailwindcss/nesting': {}},
-    {tailwindcss: {}},
-    {autoprefixer: {}}
+    require('tailwindcss'),
+    require('autoprefixer'),
+    require('postcss-nesting'),
+    // require('@tailwindcss/forms'),
   ],
 };
 
