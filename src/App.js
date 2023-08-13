@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
+import Preloader from "./components/preloder"; // Corrected import name
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate data loading
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <BrowserRouter>
+          <div className="relative z-0 landing grain">
+            <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center z-10 ">
+              <Navbar />
+              <Hero />
+            </div>
+          </div>
+        
+        </BrowserRouter>
+      )}
     </div>
   );
-}
+};
 
 export default App;
