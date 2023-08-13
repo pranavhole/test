@@ -56,7 +56,7 @@ const Navbar = () => {
             </li>
           ))}
           <button className="border font-size[1rem] grid place-items-center min-h-8 p-0.4rem full">
-            Buy AntSwap 
+            Buy Ant-Swap 
           </button>
         </ul>
 
