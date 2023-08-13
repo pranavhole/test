@@ -21,11 +21,6 @@ module.exports = {
     
     },
   },
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('postcss-nesting'),
-    // require('@tailwindcss/forms'),
-  ],
+  plugins: [],
 };
 
