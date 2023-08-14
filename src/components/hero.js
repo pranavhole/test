@@ -2,7 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { textVariant } from "../utils/motion";
 import { fadeIn } from "../utils/motion";
-
+const newsData = [
+  "Website is under maintenance",
+  "DEX is comming soon",
+  // ...more news items
+];
 const Hero = () => {
     return(
      <><motion.section className=" h-screen py-20" variants={fadeIn()}><motion.div variants={textVariant()}>
@@ -13,11 +17,15 @@ const Hero = () => {
         <div className="pt-20">
         <div className="marquee flex  rounded-20 ">
           <div className="z-1000 bg-yellow-500 text-black text-center flex items-center p-2">News</div>
-        <div className="marquee__inner items-center -z-50">
-         <p className="marquee__line w-max">Website Under Maintenance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dex coming soon</p>   
-        </div>
+        
+          <div className="marquee5 marquee__inner items-center -z-50">
+        {newsData.map((newsItem, index) => (
+          <span className=" mr-24" key={index}>{newsItem}</span>
+        ))}
+      </div>
        </div>
         </div>
+        
       </motion.div>
       </motion.section>
     </>
