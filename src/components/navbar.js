@@ -5,6 +5,11 @@ import { navLinks } from "../constants";
 import { logo,menu, close } from "../assets";
 
 const Navbar = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const styles = {
@@ -55,8 +60,9 @@ const Navbar = () => {
               <a href={`#${Link.id}`}>{Link.title}</a>
             </li>
           ))}
-          <button className="border font-size[1rem] grid place-items-center min-h-8 p-0.4rem full">
-            Buy Ant-Swap 
+          <button className="border font-size[1rem] grid place-items-center min-h-8 p-0.4rem full" onMouseEnter={handleHover}
+      onMouseLeave={handleHover} onClick={handleHover}>
+          {isHovered ? 'Comming Soon' : 'Buy AntSwap'} 
           </button>
         </ul>
 
